@@ -8,14 +8,17 @@ namespace HelloWebAPI.Controllers
     public class HomeController : ControllerBase
     {
         [HttpGet]
-        public ResponseModel GetMessage()
+        public IActionResult GetMessage()
         {
-            return new ResponseModel()
+           var result = new ResponseModel()
             {
                 HttpStatus = 200,
                 Message = "Hello ASP.NET Core Web API"
             };
+
+            return Ok(result);
         }
 
+       
     }
 }
